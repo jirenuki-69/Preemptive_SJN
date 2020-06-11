@@ -58,7 +58,7 @@ def preemptive_SJN(procesos):
         instante += 1
     final[procesos.index(en_proceso)] = instante
     return espera, final
-procesos = [['PA', 0, 12],['PB', 2, 4],['PC', 3, 6],['PD', 8, 5]]
+procesos = [['PA', 0, 3],['PB', 1, 5],['PC', 4, 2],['PD', 5, 6], ['PE', 8, 4], ['PF', 9, 10]]
 tiempo = [procesos[i][2] for i in range(len(procesos))]
 espera, final = preemptive_SJN(procesos)
 labels = ['Nombre', 'Llegada', 'Tiempo', 'Espera', 'Final']
@@ -66,6 +66,3 @@ table = PrettyTable(labels)
 for i in range(len(final)):
     table.add_row([procesos[i][0], procesos[i][1], tiempo[i], espera[i], final[i]])
 print(table)
-
-
-
